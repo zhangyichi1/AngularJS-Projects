@@ -52,6 +52,8 @@ function NarrowItDownController(MenuSearchService){
         }else {
           narrowItDownController.list = "Nothing found";
         }
+      }).catch(function(error){
+        console.log(error);
       });
     }
   }
