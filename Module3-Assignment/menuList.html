@@ -1,0 +1,22 @@
+<br/><br/><br/>
+<div>
+  <!-- use list for representation of menu list -->
+  <!-- <ol ng-if="items.checkForFound()">
+    <li ng-repeat="item in items.itemList">
+      {{ item.name }}
+      <button ng-click="items.onRemove({index: $index});">{{$index+1}}. Don't want this one!</button>
+    </li>
+  </ol> -->
+
+  <!-- use table for representation of menu list -->
+  <table ng-if="items.checkForFound()">
+    <tr ng-repeat="item in items.itemList">
+      <td>{{$index+1}}. {{ item.name }}</td>
+      <td><button ng-click="items.onRemove({index: $index});">{{$index+1}}. Don't want this one!</button></td>
+    </tr>
+  </table>
+  <!-- use ng-if to check whether to display the string "Nothing found" -->
+  <div class="noItem" ng-if="!items.checkForFound()">
+    Nothing Found!
+  </div>
+</div>
