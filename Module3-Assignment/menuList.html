@@ -13,6 +13,7 @@
     <tr ng-repeat="item in items.itemList">
       <td class="td"> {{$index+1}}.</td>
       <td class="td"> {{ item.name }}</td>
+      <td class="td"> {{ item.short_name }}</td>
       <td class="td"> {{item.description}}</td>
       <td><button ng-click="items.onRemove({index: $index});">{{$index+1}}. Don't want this one!</button></td>
     </tr>
