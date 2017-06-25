@@ -13,6 +13,13 @@ input[type="text"] {
   color: red;
   font-weight: bold;
 }
+.table{
+  border: 1px solid black;
+}
+.td{
+  text-align: center;
+  font-size: 1em;
+}
 .loader {
   display: none;
   margin-left: 5px;

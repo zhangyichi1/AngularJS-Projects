@@ -9,9 +9,11 @@
   </ol> -->
 
   <!-- use table for representation of menu list -->
-  <table ng-if="items.checkForFound()">
+  <table class="table" ng-if="items.checkForFound()">
     <tr ng-repeat="item in items.itemList">
-      <td>{{$index+1}}. {{ item.name }}</td>
+      <td class="td"> {{$index+1}}.</td>
+      <td class="td"> {{ item.name }}</td>
+      <td class="td"> {{item.description}}</td>
       <td><button ng-click="items.onRemove({index: $index});">{{$index+1}}. Don't want this one!</button></td>
     </tr>
   </table>
