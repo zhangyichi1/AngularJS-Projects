@@ -1,0 +1,8 @@
+<!-- html content for displaying the content of categories -->
+<ul>
+  <li ng-repeat="category in $ctrl.categories" ui-sref="items({catShortName: $ctrl.categories[$index].short_name})">
+    {{category.name}} ({{category.short_name}})
+    <!-- check if the current category has special instructions -->
+    <span ng-if="$ctrl.categories[$index].special_instructions">, Special Instructions: {{category.special_instructions}}</span>
+  </li>
+</ul>

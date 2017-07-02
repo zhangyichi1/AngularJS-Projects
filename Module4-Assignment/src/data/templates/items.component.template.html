@@ -1,0 +1,10 @@
+<!-- html content for displaying the content of items -->
+<ul>
+  <li ng-repeat="item in $ctrl.items">
+    <div>Id: {{item.id}}, Name: {{item.name}} ({{item.short_name}})</div>
+    <div>Description: {{item.description}}</div>
+    <!-- check if the current item has small price or large price -->
+    <div><span ng-if="$ctrl.items[$index].price_small">Price_Small: {{item.price_small}} &nbsp</span>
+    <span ng-if="$ctrl.items[$index].price_large">Price_Large: {{item.price_large}}</span></div>
+  </li>
+</ul>
