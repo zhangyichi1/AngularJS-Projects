@@ -4,10 +4,9 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['$rootScope','MenuService','menuCategories'];
-function SignUpController($rootScope, MenuService, menuCategories) {
+SignUpController.$inject = ['$rootScope','MenuService'];
+function SignUpController($rootScope, MenuService) {
   var $ctrl = this;
-  $ctrl.menuCategories = menuCategories;
 
   $ctrl.onInit = function(){
     $rootScope.$broadcast('sign-up:savingUserInfo', {saved: false});

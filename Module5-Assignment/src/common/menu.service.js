@@ -12,9 +12,7 @@ function MenuService($http, $q, ApiPath) {
   var userInfo;
 
   service.getCategories = function () {
-    return $http.get(ApiPath + '/categories.json').then(function (response) {
-      return response.data;
-    });
+    return $http.get(ApiPath + '/categories.json');
   };
 
   service.getMenuItems = function (category) {
@@ -28,18 +26,30 @@ function MenuService($http, $q, ApiPath) {
     });
   };
 
+  service.getMenuItem = function(shortName){
+    // https://YOUR-CHOSEN-SUBDOMAIN.herokuapp.com/menu_items/SHORT-NAME.json
+    var  config = {};
+    if(shortName){
+      config.params = {'shortName': shortName};
+    }
+    return $http.get(ApiPath + '/menu_items/' + shortName + '.json').then(function(response){
+      return response.data;
+    })
+  }
+
+
   service.setUserInfo = function(myInfo){
     userInfo = myInfo;
   }
 
   service.getUserInfo = function(){
-    console.log("im here");
+    // console.log("im here");
     var promise = getPromise();
 
     return promise.then(function(result){
       return result;
     }).catch(function(result){
-      console.log(result.massege);
+      // console.log(result.massege);
       return result;
     });
   }
@@ -56,7 +66,7 @@ function MenuService($http, $q, ApiPath) {
       }
       deferred.reject(userInfo);
     }
-    console.log("im here2");
+    // console.log("im here2");
     return deferred.promise;
   }
 }

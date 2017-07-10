@@ -3,11 +3,16 @@
   <h2>Email: {{ myInfoCtrl.userInfo.email }}</h2>
   <h2>Phone: {{ myInfoCtrl.userInfo.phone }}</h2>
   <h2>Favortie Dish: </h2>
-  <img width="200" height="200"
+  <!-- <img width="200" height="200"
     ng-src="images/menu/{{myInfoCtrl.userInfo.favoriteDish.short_name}}/{{myInfoCtrl.userInfo.favoriteDish.short_name}}.jpg"
-    alt="{{myInfoCtrl.userInfo.favoriteDish.name}}">
-  <div id="menuWords"> {{ myInfoCtrl.userInfo.favoriteDish.name }}<br/>
-                       {{ myInfoCtrl.userInfo.favoriteDish.special_instructions }} </div>
+    alt="{{myInfoCtrl.userInfo.favoriteDish.name}}"> -->
+  <img width="200" height="200"
+  ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.userInfo.favoriteDish}}.jpg"
+  alt="{{myInfoCtrl.item.name}}">
+  <div id="menuWords"> {{ myInfoCtrl.item.name }}({{ myInfoCtrl.item.short_name }}): {{ myInfoCtrl.item.small_portion_name }}
+                       {{ myInfoCtrl.item.price_small }} {{ myInfoCtrl.item.large_portion_name }}
+                       {{ myInfoCtrl.item.price_large }}<br/>
+                       {{ myInfoCtrl.item.description }} </div>
 
 </div>
 

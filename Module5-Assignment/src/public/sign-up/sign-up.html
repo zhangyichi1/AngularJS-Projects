@@ -48,10 +48,10 @@
     </span>
     <br/>
 
-    <select name="favoritedish" ng-model="signUpCtrl.user.favoriteDish"
+    <!-- <select name="favoritedish" ng-model="signUpCtrl.user.favoriteDish"
       ng-options="category.name for category in signUpCtrl.menuCategories"
       style="color: black" required>
-    </select>
+    </select> -->
     <!-- <select name="favoritedish" ng-model="signUpCtrl.user.favoriteDish"
       style="color: black" required>
       <option ng-repeat="category in signUpCtrl.menuCategories"
@@ -59,8 +59,13 @@
         {{ category.name }}
       </option>
     </select> -->
-    <!-- {{ signUpCtrl.user.favoriteDish }} -->
-    <span ng-if="regForm.favoritedish.$invalid && regForm.favoritedish.$touched">
+
+    <input type="text" name="favoritedish" ng-model="signUpCtrl.user.favoriteDish"
+    required check-directive style="color: black">
+    <span ng-if="regForm.favoritedish.$error.itemExists && regForm.favoritedish.$touched">
+      The menu number doesn't exist
+    </span>
+    <span ng-if="regForm.favoritedish.$error.required && regForm.favoritedish.$touched">
       Your favorite dish must be chosen
     </span>
     <br/>
