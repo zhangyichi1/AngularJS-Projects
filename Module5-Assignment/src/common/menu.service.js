@@ -12,7 +12,9 @@ function MenuService($http, $q, ApiPath) {
   var userInfo;
 
   service.getCategories = function () {
-    return $http.get(ApiPath + '/categories.json');
+    return $http.get(ApiPath + '/categories.json').then(function(response){
+      return response.data;
+    });
   };
 
   service.getMenuItems = function (category) {
